@@ -17,7 +17,8 @@ import javax.persistence.ManyToMany;
 public class Project {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long projectId;
 
 	public Long getProjectId() {
