@@ -12,13 +12,21 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Project {
 
-	@Id
 //	@GeneratedValue(strategy = GenerationType.AUTO)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+//	From Section 8 - Configuring properties for postgres database
+	
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "project_seq")
+	@SequenceGenerator(name = "project_seq", sequenceName = "project_seq", allocationSize = 1)
 	private Long projectId;
 
 	public Long getProjectId() {
@@ -81,8 +89,8 @@ public class Project {
 		this.description = description;
 	}
 
-    public void addEmployee(Employee emp) {
-		if(employees == null) {
+	public void addEmployee(Employee emp) {
+		if (employees == null) {
 			employees = new ArrayList<>();
 		}
 		employees.add(emp);
