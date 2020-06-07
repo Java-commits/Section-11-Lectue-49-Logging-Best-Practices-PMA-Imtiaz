@@ -8,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Employee;
 
+//@Repository
+//@Profile("prod")
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 	
 	@Override

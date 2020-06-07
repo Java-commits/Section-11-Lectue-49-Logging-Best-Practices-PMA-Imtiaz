@@ -1,8 +1,6 @@
 package com.jrp.pma.controllers;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,7 +33,6 @@ public class HomeController {
 		
 		model.addAttribute("versionNumber", ver);
 		
-		Map<String, Object> map = new HashMap<>();
 
 		List<Project> projects = proRepo.findAll();
 		model.addAttribute("projectsList", projects);
